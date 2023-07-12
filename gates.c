@@ -4,12 +4,21 @@
 #include <math.h>
 
 // OR Gate
+// float train[][3] = {
+//    {0, 0, 0},
+//    {0, 1, 1},
+//    {1, 0, 1},
+//    {1, 1, 1}
+// };
+
+// AND Gate
 float train[][3] = {
     {0, 0, 0},
-    {0, 1, 1},
-    {1, 0, 1},
+    {0, 1, 0},
+    {1, 0, 0},
     {1, 1, 1}
 };
+
 #define train_count (sizeof(train) / sizeof(train[0]))
 
 float sigmoidf(float x) {
@@ -57,7 +66,6 @@ int main(void)
 
         //printf("Cost = %f, w1 = %f, w2 = %f, b = %f\n", cost(w1, w2, b), w1, w2, b);
     }
-    printf("-----------------------\n");
     printf("Cost = %f, w1 = %f, w2 = %f, b = %f\n", cost(w1, w2, b), w1, w2, b);
 
     for (size_t i = 0; i < train_count; i++) {
